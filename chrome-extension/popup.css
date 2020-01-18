@@ -1,11 +1,38 @@
-.bodyText {
+body {
+    padding: 0 10px 10px 20px;
+    background-image: linear-gradient(to bottom right, #e7e1d9, #ffffff);
+}
+.collapse {
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
     font-family: "Trebuchet MS", sans-serif;
     font-size: 14pt;
+    background: none;
+    border: none;
+    padding: 0;
+}
+.content {
+    max-height: 0;
+    transition: max-height 0.2s ease-in-out;
+    overflow: hidden;
+}
+.text {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 14pt;
+}
+#alert {
+    color: #000000;
+}
+#warning {
+    color: #000000;
+}
+#tip {
+    color: #000000;
 }
 #scroll {
     font-family: "Trebuchet MS", sans-serif;
     width: 400px;
-    padding: 0 20px 20px 20px;
     height: 400px;
     max-height: 400px;
     overflow: auto;

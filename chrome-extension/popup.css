@@ -2,20 +2,25 @@ body {
     padding: 0 10px 10px 20px;
     background-image: linear-gradient(to bottom right, #e7e1d9, #ffffff);
 }
+button:focus {
+    outline:0;
+}
 .collapse {
     cursor: pointer;
     text-align: left;
     width: 100%;
     font-family: "Trebuchet MS", sans-serif;
     font-size: 14pt;
-    background: none;
     border: none;
-    padding: 0;
+    padding: 10px
 }
 .content {
     max-height: 0;
     transition: max-height 0.2s ease-in-out;
     overflow: hidden;
+}
+.list {
+    padding-left: 10px;
 }
 .text {
     font-family: "Trebuchet MS", sans-serif;
@@ -23,12 +28,16 @@ body {
 }
 #alert {
     color: #000000;
+    background-color: #a5d4b0;
 }
 #warning {
     color: #000000;
+    background-color: #a5d4b0;
 }
 #tip {
     color: #000000;
+    background-color: #a5d4b0;
+
 }
 #scroll {
     font-family: "Trebuchet MS", sans-serif;

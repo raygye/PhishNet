@@ -1,0 +1,16 @@
+{
+    "name": "PhishNet",
+    "version": "0.0.1",
+    "description": "Starterhacks 2020 Project",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+}

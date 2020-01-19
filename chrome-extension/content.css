@@ -1,9 +1,9 @@
-#warning-box {
+.warning-box {
     position: absolute;
     height: 50px;
     width: 120px;
     background-color: whitesmoke;
-    z-index: 9999;
+    z-index: 9999 !important;
 
     font-size: 14px;
     color: orange;
@@ -11,4 +11,6 @@
     border-color: black;
     border-style: solid;
     border-radius: 5px;
+
+    display: none;
 }

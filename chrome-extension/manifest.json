@@ -6,7 +6,8 @@
         "scripts": ["background.js"]
     },
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "tabs"
     ],
     "content_scripts": [
         {
@@ -19,10 +20,5 @@
     "browser_action": {
         "default_popup": "popup.html"
     },
-    "manifest_version": 2,
-    "icons": {
-        "16": "media/icon.png",
-        "48": "media/icon.png",
-        "128": "media/icon.png"
-    }
+    "manifest_version": 2
 }

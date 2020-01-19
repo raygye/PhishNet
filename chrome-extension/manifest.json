@@ -13,8 +13,10 @@
         {
             "js": ["content.js"],
             "css": ["content.css"],
-            "matches": ["*://mail.google.com/*"]
-
+            "matches": ["*://mail.google.com/*"],
+            "icons": { "16": "media/icon.png",
+                        "48": "media/icon.png",
+                        "128": "media/icon.png" }
         }
     ],
     "browser_action": {

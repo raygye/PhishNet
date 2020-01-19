@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener(function (req, sender, sendRes){
     } else if (req.msg == "get_warning_num"){
         sendRes(uniqueIdNum);
     }
-})
+});
 
 function addWarningBox(linkElement, uniqueId){
     var textbox = document.createElement("div");
@@ -40,4 +40,3 @@ function addWarningBox(linkElement, uniqueId){
     };
 
 }
-

@@ -5,8 +5,8 @@ chrome.runtime.onMessage.addListener(function (){
         hyperlinks[link].style.color = "orange";
         addWarningBox(hyperlinks[link].parentElement);
     }
-}
-
+});
+let x = 0;
 function addWarningBox(parentElement){
     var textbox = document.createElement("div");
     textbox.id = "warning-box";
@@ -14,4 +14,3 @@ function addWarningBox(parentElement){
     parentElement.appendChild(textbox);
 
 }
-getHyperlinks();

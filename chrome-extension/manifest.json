@@ -6,7 +6,8 @@
         "scripts": ["background.js"]
     },
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "tabs"
     ],
     "content_scripts": [
         {

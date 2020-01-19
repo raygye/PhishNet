@@ -36,6 +36,8 @@ chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
         msg: "get_warning_num",
     }, function (res) {
         warningNum = res;
+        getNumLinks(warningNum);
+        warningNum = 0;
         for(i=0;i<warningNum;i++){
             var alert = document.createElement("div");
             alert.className = "list";
@@ -44,3 +46,7 @@ chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
         }
     });
 });
+
+function getNumLinks(num){
+    document.getElementById("warning").innerHTML += (num).toString();
+}

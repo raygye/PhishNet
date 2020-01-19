@@ -6,15 +6,24 @@ var uniqueIdNum = 0;
 chrome.runtime.onMessage.addListener(function (req, sender, sendRes){
 
     if(req.msg == "find_warnings"){
-        var hyperlinks = document.getElementsByTagName("center")[0].getElementsByTagName("a");
+
+
+        var hyperlinks = document.getElementsByTagName("a");
         for(link in hyperlinks){
-            hyperlinks[link].style.color = "orange";
-            addWarningBox(hyperlinks[link], uniqueId + (uniqueIdNum++));
+            if(hyperlinks[link].href.indexOf("mail.google.com/") != -1){
+            } else {
+                addWarningBox(hyperlinks[link], uniqueId + (uniqueIdNum++));
+            }
         }
         uniqueIdNum = 0;
+
+
     } else if (req.msg == "get_warning_num"){
         sendRes(uniqueIdNum);
+    } else if(req.msg == "show_tip"){
+        addDomainTipBox();
     }
+
 });
 
 function addWarningBox(linkElement, uniqueId){
@@ -22,7 +31,6 @@ function addWarningBox(linkElement, uniqueId){
     textbox.id = uniqueId;
     textbox.className = "warning-box";
     textbox.innerHTML = "Be careful around links!";
-    //alert(textbox.style.left);
     linkElement.appendChild(textbox);
     linkElement.style.position = "relative";
     linkElement.style.left = "0px";
@@ -40,3 +48,38 @@ function addWarningBox(linkElement, uniqueId){
     };
 
 }
+
+
+function addDomainTipBox(){
+    var sender = document.querySelectorAll(".go")[0];
+    var textbox = document.createElement("div");
+    //var dismiss = document.createElement("button");
+
+    //sender.parentElement.insertBefore(textbox, sender.parentElement.firstChild);
+    sender.parentElement.appendChild(textbox);
+    //textbox.parentElement.appendChild(dismiss);
+
+    //dismiss.innerHTML = "dismiss";
+    //dismiss.className = "dismiss-button";
+
+   // dismiss.addEventListener("click", function(){
+    //    document.getElementById("tip-box").style.display = "none";
+    //});
+
+    textbox.addEventListener("click", function() {
+        this.style.display = "none";
+    });
+    textbox.className = "domain-tip-box";
+    textbox.id = "tip-box";
+    textbox.innerHTML = "Domain names can be tricky!\nCheck the name after the '@' in the email address. ";
+    textbox.innerHTML += "Corporations almost always have their own domain name (eg, @accounts.google.com, almost never @gmail!)\n";
+    textbox.innerHTML += "Look out for misspelled names and numbers, too; scammers will often try to trick you with slightly incorrect domains.";
+    sender.style.position = "relative";
+    sender.style.bottom = "0px";
+    //textbox.style.bottom =  (parseInt(linkElement.style.bottom) - 70).toString() + "px";
+
+    
+    
+
+}
+

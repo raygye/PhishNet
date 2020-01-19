@@ -21,7 +21,7 @@ function addWarningBox(linkElement, uniqueId){
     var textbox = document.createElement("div");
     textbox.id = uniqueId;
     textbox.className = "warning-box";
-    textbox.innerHTML = "Warning! This link seems phishy...";
+    textbox.innerHTML = "Be careful around links!";
     //alert(textbox.style.left);
     linkElement.appendChild(textbox);
     linkElement.style.position = "relative";

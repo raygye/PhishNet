@@ -1,7 +1,10 @@
-/*
-chrome.runtime.onInstalled.addListener(function(tab) {
-    chrome.tabs.executeScript(tab.id, {
-    "file": "content.js"
-    });
+
+document.body.addEventListener('click', function(message, callback) {
+    console.log("click!");
+    chrome.tabs.executeScript({
+        "file": "content.js"
+    }, true);
 });
-*/
+
+
+

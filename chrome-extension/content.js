@@ -16,4 +16,6 @@ function addWarningBox(parentElement){
     parentElement.appendChild(textbox);
 
 }
+
+
 getHyperlinks();
